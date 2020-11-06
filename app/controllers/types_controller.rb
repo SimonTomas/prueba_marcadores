@@ -5,6 +5,9 @@ class TypesController < ApplicationController
   # GET /types.json
   def index
     @types = Type.all
+
+    @query = Marker.group(:type_id).count
+
   end
 
   # GET /types/1
