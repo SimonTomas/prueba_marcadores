@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy, :public_active]
 
   # GET /categories
   # GET /categories.json
@@ -24,6 +24,11 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+  end
+
+  def public_active
+    @category.toggle!(:public)
+    redirect_to categories_path
   end
 
   # GET /categories/1/edit
