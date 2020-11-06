@@ -12,6 +12,15 @@ class CategoriesController < ApplicationController
   def show
   end
 
+  def news
+    categories = Category.where('category_id is null')
+    hash = categories.map{|category| { "Categoria" => category.name, "Subcategoria" => category.categories.map { |subc| subc.name } }}
+    # hash = categories.map{|category| { "Categoria" => category.name, "Subcategoria" => category.categories.map { |subc| subc.markers.map { |marker| marker.url_address } } }}
+    pretty_hash = JSON.pretty_generate(hash)
+    
+    render json: pretty_hash
+  end
+
   # GET /categories/new
   def new
     @category = Category.new

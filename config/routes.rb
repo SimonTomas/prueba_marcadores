@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :types
 
+  get 'api/categories', to: 'categories#news'
+
   root 'markers#index'
 end
