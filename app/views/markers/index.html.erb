@@ -2,6 +2,8 @@
 
 <h1>Markers</h1>
 
+<%= render 'form' %>
+
 <table>
   <thead>
     <tr>
@@ -16,8 +18,8 @@
     <% @markers.each do |marker| %>
       <tr>
         <td><%= marker.url_address %></td>
-        <td><%= marker.type %></td>
-        <td><%= marker.category %></td>
+        <td><%= marker.type.name %></td>
+        <td><%= marker.category.name %></td>
         <td><%= link_to 'Show', marker %></td>
         <td><%= link_to 'Edit', edit_marker_path(marker) %></td>
         <td><%= link_to 'Destroy', marker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,7 +27,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Marker', new_marker_path %>

@@ -5,6 +5,11 @@ class MarkersController < ApplicationController
   # GET /markers.json
   def index
     @markers = Marker.all
+    @marker = Marker.new
+
+    @types = Type.all
+
+    @categories = Category.where('category_id is null')
   end
 
   # GET /markers/1
