@@ -6,7 +6,7 @@ class TypesController < ApplicationController
   def index
     @types = Type.all
 
-    @query = Marker.group(:type_id).count
+    @query = Type.joins(:markers).group(:name).count
 
   end
 
