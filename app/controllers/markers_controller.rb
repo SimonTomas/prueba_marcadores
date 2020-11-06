@@ -10,6 +10,11 @@ class MarkersController < ApplicationController
     @types = Type.all
 
     @categories = Category.where('category_id is null')
+
+    respond_to do |format|
+      format.html {}
+      format.js { @marker }
+    end
   end
 
   # GET /markers/1
@@ -35,9 +40,11 @@ class MarkersController < ApplicationController
       if @marker.save
         format.html { redirect_to @marker, notice: 'Marker was successfully created.' }
         format.json { render :show, status: :created, location: @marker }
+        format.js { @marker }
       else
         format.html { render :new }
         format.json { render json: @marker.errors, status: :unprocessable_entity }
+        format.js { render :index }
       end
     end
   end
