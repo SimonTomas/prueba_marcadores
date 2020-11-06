@@ -11,27 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :url_address %>
-    <%= form.text_field :url_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type_id %>
+    <%= form.text_field :url_address, placeholder: 'URL...' %>
     <%= form.collection_select :type_id, @types, :id, :name, prompt: 'Selecciona un tipo...' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category_id %>
     <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Selecciona una categoría...' %>
-  </div>
+    <%= form.submit %>
   
   <%# <div class="field"> %>
     <%#= form.label 'Subcategorias' %>
     <%#= form.text_field :category_id %>
   <%# </div> %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
