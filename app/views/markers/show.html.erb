@@ -7,12 +7,12 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @marker.type %>
+  <%= @marker.type.name %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @marker.category %>
+  <%= @marker.category.name %>
 </p>
 
 <%= link_to 'Edit', edit_marker_path(@marker) %> |
