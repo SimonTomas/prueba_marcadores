@@ -29,6 +29,9 @@ class MarkersController < ApplicationController
 
   # GET /markers/1/edit
   def edit
+    @types = Type.all
+    @categories = Category.where('category_id is null')
+
   end
 
   # POST /markers
@@ -56,9 +59,11 @@ class MarkersController < ApplicationController
       if @marker.update(marker_params)
         format.html { redirect_to @marker, notice: 'Marker was successfully updated.' }
         format.json { render :show, status: :ok, location: @marker }
+        format.js { @marker }
       else
         format.html { render :edit }
         format.json { render json: @marker.errors, status: :unprocessable_entity }
+        format.js { render :index }
       end
     end
   end
