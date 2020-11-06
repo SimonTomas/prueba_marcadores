@@ -24,6 +24,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    @categories = Category.all
   end
 
   def public_active
