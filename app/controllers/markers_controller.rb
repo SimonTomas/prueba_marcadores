@@ -9,7 +9,8 @@ class MarkersController < ApplicationController
 
     @types = Type.all
 
-    @categories = Category.where('category_id is null')
+    @categories = Category.all
+    @general_categories = Category.where('category_id is null')
 
     respond_to do |format|
       format.html {}
