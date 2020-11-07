@@ -14,6 +14,6 @@
     <%= form.text_field :url_address, placeholder: 'URL...' %>
     <%= form.collection_select :type_id, @types, :id, :name, prompt: 'Selecciona un tipo...' %>
     <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Selecciona una categoría...' %>
-    <%= form.submit %>
+    <%= form.submit 'Crear Marcador' %>
 
 <% end %>

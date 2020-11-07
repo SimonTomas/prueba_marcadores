@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Categories</h1>
+<h1>Categorias</h1>
 
-<table>
+<%= link_to 'Volver', root_path %> |
+<%= link_to 'Nueva Categoria', new_category_path %>
+
+<br>
+
+<table style="margin-top: 10px">
   <thead>
     <tr>
       <th>Categoria</th>
@@ -25,8 +30,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Volver', root_path %> |
-<%= link_to 'New Category', new_category_path %>
