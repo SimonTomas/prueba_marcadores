@@ -15,5 +15,5 @@
   <%= @marker.category.name %>
 </p>
 
-<%= link_to 'Edit', edit_marker_path(@marker) %> |
-<%= link_to 'Back', markers_path %>
+<%= link_to 'Editar', edit_marker_path(@marker), class: 'btn btn-primary' %>
+<%= link_to 'Volver', markers_path, class: 'btn btn-primary' %>

@@ -31,7 +31,7 @@ class MarkersController < ApplicationController
   # GET /markers/1/edit
   def edit
     @types = Type.all
-    @categories = Category.where('category_id is null')
+    @categories = Category.all
 
   end
 

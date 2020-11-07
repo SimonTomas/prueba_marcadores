@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @category.name %>
 </p>
 
 <p>
-  <strong>Public:</strong>
-  <%= @category.public %>
+  <strong>Privacidad:</strong>
+  <%= @category.public ? "Público" : "Privado" %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @category.category %>
+  <strong>Categoría:</strong>
+  <%= @category.category.nil? ? "General" : @category.category.name.capitalize %>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Editar', edit_category_path(@category), class: 'btn btn-primary mt-2' %>
+<%= link_to 'Volver', categories_path, class: 'btn btn-primary mt-2' %>

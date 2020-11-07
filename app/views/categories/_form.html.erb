@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label "Nombre de la Categoría" %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :public %>
+  <div class="field mt-2">
+    <%= form.label "Pública" %>
     <%= form.check_box :public %>
   </div>
 
   
-  <div class="field"> 
+  <div class="field mb-3"> 
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Selecciona una categoria' %><span style="display: inline-block; text-indent: 10px">Omitir si es Categoria general</span>
+    <%= form.collection_select :category_id, @categories, :id, :name, {prompt: 'Selecciona una categoria'}, {class: 'custom-select'} %><span class="font-weight-bold">Omitir si es Categoria general</span>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Actualizar', class: 'btn btn-success' %>
   </div>
 <% end %>

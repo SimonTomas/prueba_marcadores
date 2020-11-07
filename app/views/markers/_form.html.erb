@@ -11,9 +11,19 @@
     </div>
   <% end %>
 
-    <%= form.text_field :url_address, placeholder: 'URL...' %>
-    <%= form.collection_select :type_id, @types, :id, :name, prompt: 'Selecciona un tipo...' %>
-    <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Selecciona una categoría...' %>
-    <%= form.submit 'Crear Marcador' %>
+    <div class="form-row mt-2">
+      <div class="col">
+        <%= form.text_field :url_address, placeholder: 'URL...', class: 'form-control' %>
+      </div>
+      <div class="col">
+        <%= form.collection_select :type_id, @types, :id, :name, {prompt: 'Selecciona un tipo...'}, {class: 'custom-select'} %>
+      </div>
+      <div class="col">
+        <%= form.collection_select :category_id, @categories, :id, :name, {prompt: 'Selecciona una categoría...'}, {class: 'custom-select'} %>
+      </div>
+      <div class="col">
+        <%= form.submit 'Submit', class: 'btn btn-primary' %>
+      </div>
+    </div>
 
 <% end %>
